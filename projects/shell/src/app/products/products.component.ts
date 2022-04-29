@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BasketService, Product, ProductsService } from '@shared';
 
 @Component({
   selector: 'app-products',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class ProductsComponent implements OnInit {
+  public products: Product[] = [];
 
-  constructor() { }
+  constructor(private productsService: ProductsService, private basketService: BasketService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.products = this.productsService.getProducts();
   }
 
+  public addToBasket(productId: number): void {
+    const product = this.products.find(p => p.id === productId) as Product;
+    this.basketService.addToBasket(product);
+  }
 }

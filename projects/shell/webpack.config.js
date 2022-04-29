@@ -6,7 +6,9 @@ const share = mf.share;
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   path.join(__dirname, '../../tsconfig.json'),
-  [/* mapped paths to share */]);
+  [
+    '@shared'
+  ]);
 
 module.exports = {
   output: {
@@ -36,10 +38,9 @@ module.exports = {
         // },        
         
         // For hosts (please adjust)
-        // remotes: {
-        //     "mfeBasket": "http://localhost:4200/remoteEntry.js",
-
-        // },
+        remotes: {
+          "mfeBasket": "http://localhost:4201/remoteEntry.js",
+        },
 
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 

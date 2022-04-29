@@ -6,7 +6,9 @@ const share = mf.share;
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   path.join(__dirname, '../../tsconfig.json'),
-  [/* mapped paths to share */]);
+  [
+    '@shared'
+  ]);
 
 module.exports = {
   output: {
@@ -29,11 +31,11 @@ module.exports = {
         library: { type: "module" },
 
         // For remotes (please adjust)
-        // name: "mfeBasket",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './projects/mfe-basket/src/app/app.component.ts',
-        // },        
+        name: "mfeBasket",
+        filename: "remoteEntry.js",
+        exposes: {
+          './Module': './projects/mfe-basket/src/app/basket/basket.module.ts',
+        },
         
         // For hosts (please adjust)
         // remotes: {

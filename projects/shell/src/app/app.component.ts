@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'shell';
+  public isAuthenticated$: Observable<boolean> = of(false);
+  public name$: Observable<string> = of('');
+
+  constructor() { }
 }
+

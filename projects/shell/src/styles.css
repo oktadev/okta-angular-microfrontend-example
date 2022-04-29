@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 1rem;
+    height: 100%;
+}
+
+h1,h2 {
+    font-family: 'Fredoka One', cursive;
+}

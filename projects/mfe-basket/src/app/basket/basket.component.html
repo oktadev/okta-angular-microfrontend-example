@@ -1,1 +1,21 @@
-<p>basket works!</p>
+<h3 class="text-xl mb-6">Your Cupcake Basket</h3>
+
+<p *ngIf="totalItems === 0">
+    Oh no! Your cupcake basket is empty. 😢 &nbsp; Treat yourself to a cupcake!
+</p>
+
+<div *ngIf="totalItems > 0">
+    <table class="table-auto">
+        <thead class="border border-y-sky-500 border-x-0 h-8">
+        <th class="text-left px-3">Name</th>
+        <th class="text-center pr-3">Quantity</th>
+        </thead>
+        <tr class="h-12" *ngFor="let item of items">
+            <td>{{item.product.name}}</td>
+            <td class="text-center">{{item.quantity}}</td>
+        </tr>
+    </table>
+    <p class="mt-6">
+        Total number of items: {{totalItems}}
+    </p>
+</div>
