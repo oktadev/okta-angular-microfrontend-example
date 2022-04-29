@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Product } from '@shared';
 
 @Component({
   selector: 'app-product',
@@ -6,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
 
-  constructor() { }
+  public notifyPurchase = false;
+  @Input() public product!: Product;
+  @Output() public purchase: EventEmitter<number> = new EventEmitter<number>()
 
-  ngOnInit(): void {
+  public purchaseProduct(): void {
+    this.notifyPurchase = true;
+    this.purchase.emit(this.product.id);
+    setTimeout(() => this.notifyPurchase = false, 3000);
   }
-
 }

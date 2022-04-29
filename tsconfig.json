@@ -16,8 +16,8 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "shared": [
-        "dist/shared/shared",
+      "@shared": [
+        "projects/shared/src/public-api.ts",
         "dist/shared"
       ]
     },

@@ -1,1 +1,13 @@
-<p>products works!</p>
+<p class="text-center text-3xl mb-7 text-pink-500">Which sweet treat will you enjoy today?</p>
+<div class="flex flex-wrap gap-4">
+    <app-product *ngFor="let p of products" [product]="p" (purchase)="addToBasket($event)"></app-product>
+</div>
+<div class="mt-9 text-xs text-gray-600">
+    The delicious cupcake pictures can be found for free use on <a class="underline" href="https://unsplash.com/">Unsplash</a>. Thanks to the following photographers:
+    <a class="underline" href="https://unsplash.com/@matosalbers">Cristina Matos-Albers</a>,
+    <a class="underline" href="https://unsplash.com/@biglaughkitchen">Deva Williamson</a>,
+    <a class="underline" href="https://unsplash.com/@merittthomas">Meritt Thomas</a>,
+    <a class="underline" href="https://unsplash.com/@luisanazl">luisana zerpa</a>,
+    <a class="underline" href="https://unsplash.com/@saracervera">Sara Cervera</a>,
+    <a class="underline" href="https://unsplash.com/@wachalala">Jr R</a>
+</div>
