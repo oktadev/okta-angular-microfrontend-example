@@ -35,7 +35,7 @@
           </a>
         </li>
         <li *ngIf="isAuthenticated$ | async">
-          <a routerLink="/">
+          <a routerLink="/profile">
             <button
                     class="flex items-center transition ease-in delay-150 duration-300 h-10 px-4 rounded-lg hover:border hover:border-sky-400"
                     routerLinkActive="text-cyan-500 font-semibold"
@@ -46,13 +46,19 @@
           </a>
         </li>
         <li>
-          <button *ngIf="(isAuthenticated$ | async) === false; else logout" class="flex items-center transition ease-in delay-150 duration-300 h-10 px-4 rounded-lg hover:border hover:border-sky-400">
+          <button *ngIf="(isAuthenticated$ | async) === false; else logout"
+                  class="flex items-center transition ease-in delay-150 duration-300 h-10 px-4 rounded-lg hover:border hover:border-sky-400"
+                  (click)="signIn()"
+          >
             <span class="material-icons-outlined text-gray-500">login</span>
             <span>&nbsp;Sign In</span>
           </button>
 
           <ng-template #logout>
-            <button  class="flex items-center transition ease-in delay-150 duration-300 h-10 px-4 rounded-lg hover:border hover:border-sky-400">
+            <button
+                    class="flex items-center transition ease-in delay-150 duration-300 h-10 px-4 rounded-lg hover:border hover:border-sky-400"
+                    (click)="signOut()"
+            >
               <span class="material-icons-outlined text-gray-500">logout</span>
               <span>&nbsp;Sign Out</span>
             </button>
