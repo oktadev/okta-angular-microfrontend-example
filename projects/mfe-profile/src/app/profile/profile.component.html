@@ -1,0 +1,7 @@
+<h3 class="text-xl mb-6">Your Profile</h3>
+
+<div *ngIf="profile$ | async as profile">
+    <p>Name: <span class="font-semibold">{{profile.name}}</span></p>
+    <p class="my-3">Email: <span class="font-semibold">{{profile.email}}</span></p>
+    <p>Last signed in at <span class="font-semibold">{{date$ | async | date:'full'}}</span></p>
+</div>
