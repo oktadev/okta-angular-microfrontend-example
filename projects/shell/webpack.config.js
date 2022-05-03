@@ -39,8 +39,8 @@ module.exports = {
         
         // For hosts (please adjust)
         remotes: {
-          "mfeBasket": "http://localhost:4201/remoteEntry.js",
-          "mfeProfile": "http://localhost:4202/remoteEntry.js"
+          // "mfeBasket": "http://localhost:4201/remoteEntry.js",
+          // "mfeProfile": "http://localhost:4202/remoteEntry.js"
         },
 
         shared: share({
