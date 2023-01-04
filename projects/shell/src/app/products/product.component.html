@@ -1,8 +1,8 @@
-<div class="flex h-56">
+<div class="flex h-48">
     <div class="flex-none w-48 relative">
         <img src="{{product.link}}" alt="{{product.name}}" class="absolute inset-0 w-full h-full object-cover rounded-l-lg" />
     </div>
-    <div class="p-6 border-y border-r border-sky-300 rounded-r-lg w-96 flex flex-col">
+    <div class="py-2 pl-3 pr-2 border-y border-r border-sky-300 rounded-r-lg w-80 flex flex-col">
         <h2 class="text-3xl text-violet-600">
             {{product.name}}
         </h2>
@@ -11,7 +11,7 @@
         </p>
         <div class="text-sm font-medium self-end">
             <button
-                    class="transition ease-in-out delay-150 h-10 px-6 font-semibold rounded-lg border text-slate-700 font-sans duration-300 hover:-translate-y-1 hover:scale-110"
+                    class="transition ease-in-out delay-150 h-9 px-5 font-semibold rounded-lg border text-slate-700 font-sans duration-300 hover:-translate-y-1 hover:scale-110"
                     [ngClass]="notifyPurchase ? 'border-emerald-400 bg-emerald-100':'border-slate-200 bg-sky-300 hover:bg-violet-300'"
                     (click)="purchaseProduct()">
                 <span *ngIf="!notifyPurchase; else notify">Add to basket</span>
